@@ -1,0 +1,237 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Body styles */
+body {
+    font-family: 'Quantico', serif;
+    background: url('https://i.postimg.cc/9XtF8N7V/ezgif-1cea55295377be.gif') no-repeat center center fixed; /* Background Image */
+    background-size: cover; /* Make the background cover the entire screen */
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full height */
+    position: relative; /* Required for overlay positioning */
+    flex-direction: column; /* Stack items vertically */
+}
+
+/* Overlay with light transparency */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000084; /* Black with 40% opacity */
+    z-index: -1; /* Make sure the overlay is behind the content */
+}
+
+/* Container to center all content */
+.container {
+    text-align: center;
+    position: relative; /* Keep content above the background */
+    z-index: 1; /* Ensure it stays above the overlay */
+    width: 80%; /* Adjust width for alignment */
+}
+
+/* Logo Styling */
+.logo-container {
+    margin-top: 0px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+}
+
+/* Text Styling */
+.heading {
+    font-family: 'Quantico', serif;
+    font-size: 15px;
+    color: white;
+    margin-top: 5px;
+}
+
+.sub-heading {
+    font-family: 'Quantico', serif;
+    font-size: 10px;
+    color: gold; /* Golden color for the sub-heading */
+    margin-top: 5px;
+}
+
+/* Divider Line Styling */
+.divider {
+    margin-top: 10px;
+    width: 80%; /* Spans 80% of the container */
+    height: 0.5px;
+    background-color: #ffffffb7; /* Light transparent white */
+    margin-bottom: 5px;
+    margin-left: auto; /* Center align the divider */
+    margin-right: auto;
+}
+
+/* Search Bar Section */
+.search-container {
+    display: flex;
+    justify-content: center; /* Align center */
+    width: 100%; /* Align with the content width */
+    margin-top: 10px;
+}
+
+.search-input {
+    width: 200px; /* Smaller width for the search bar */
+    padding: 5px;
+    font-size: 14px;
+    border: 0.5px solid #fff;
+    background-color: transparent;
+    color: white;
+    border-radius: 10px;
+}
+
+.search-btn {
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.search-btn img {
+    width: 25px; /* Adjusted icon size */
+    height: 25px;
+}
+
+.search-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.search-input:focus, .search-btn:focus {
+    outline: none;
+}
+
+/* About Systemadminbd Text */
+.about-text {
+    font-family: 'Quantico', serif;
+    font-size: 10px;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Divider for About section */
+.about-divider {
+    width: 30%; /* Full width of the container */
+    height: 3px;
+    background-color: gold; /* Golden color */
+    margin: 10px auto;
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Additional Text Below Divider */
+.additional-text {
+    font-family: 'Quantico', serif;
+    font-size: 10px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 20px; /* Add spacing below the text */
+}
+
+/* Box Styling */
+.box {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: flex-start; /* Keep icon at the start (left) */
+    background-color: #0;
+    border: 1px solid white;
+    padding: 7px 13px;
+    border-radius: 10px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    width: 80%; /* Adjust width if necessary */
+    margin: 3px auto; /* Center the box horizontally */
+}
+
+/* Icon Styling */
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0px; /* Space between icon and text */
+    align: center;
+}
+
+/* Text inside the box */
+.txt {
+    color: white;
+    font-size: 10px; /* Adjust size as per need */
+    font-weight: bold;
+    text-align: center; /* Center the text inside the box */
+    flex-grow: 1; /* Allow text to take up the remaining space */
+}
+
+/* Hover effect for box */
+.box:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Global Font Style */
+body {
+    font-family: 'Quantico', serif;
+}
+
+/* Additional Styling for Specific Elements */
+.heading, .sub-heading, .about-text, .additional-text, .txt {
+    font-family: 'Quantico', serif;
+}
+
+/* Box Container to align boxes side by side */
+.cbox-container {
+    display: flex;
+    justify-content: space-between; /* Adds space between the boxes */
+    gap: 20px; /* Optional: Add some space between the boxes */
+    margin-top: 20px;
+}
+
+/* Box Styling */
+.cbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #ffffff6f;
+    border: 0px solid white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+    width: 48%; /* Adjust width to fit 2 boxes side by side */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Icon Styling */
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+}
+
+/* Text Styling inside box */
+.txtt {
+    color: cyan;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center; /* Center the text inside the box */
+    flex-grow: 1; /* Allow text to take up the remaining space */            
+}
+
+/* Icon Styling */
+.iconn {
+    width: 30px;
+    height: 30px;
+    margin-right: 0px; /* Space between icon and text */
+    align: left;
+}
+
+

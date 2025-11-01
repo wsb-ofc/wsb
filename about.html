@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHITE-SEC BANGLADESH Official | ABOUT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 40, 0, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 0, 40, 0.1) 0%, transparent 20%);
+            color: #00ff00;
+            font-family: 'Quantico', monospace;
+            min-height: 100vh;
+            padding-top: 60px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: rgba(0, 20, 0, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+            border-bottom: 1px solid #00ff00;
+        }
+
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .dot {
+            width: 20px;
+            height: 2px;
+            background-color: #00ff00;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .nav-toggle:hover .dot {
+            background-color: #ffff00;
+            box-shadow: 0 0 10px #ffff00;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            background: rgba(0, 10, 0, 0.95);
+            width: 200px;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
+
+        .nav-links.active {
+            display: flex;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-links a {
+            color: #00ff00;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-left: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffff00;
+            border-left: 2px solid #ffff00;
+            text-shadow: 0 0 10px #ffff00;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Logo Section */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: glitch 5s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translateX(0); }
+            5% { transform: translateX(-2px); }
+            10% { transform: translateX(2px); }
+            15% { transform: translateX(-1px); }
+            20% { transform: translateX(1px); }
+            95% { transform: translateX(0); }
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.8);
+            transform: scale(1.05);
+        }
+
+        /* Text Sections */
+        .title {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            margin: 10px 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: gold;
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .section-title {
+            text-align: center;
+            color: cyan;
+            font-size: 20px;
+            margin: 30px 0 15px 0;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Box Styles */
+        .box {
+            background: rgba(0, 20, 0, 0.3);
+            border: 1px solid #00ff00;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .box:hover::before {
+            left: 100%;
+        }
+
+        .box:hover {
+            border-color: #ffff00;
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Content Styles */
+        .content-text {
+            color: white;
+            text-align: center;
+            line-height: 1.6;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        .highlight {
+            color: gold;
+            font-weight: bold;
+        }
+
+        .team-text {
+            color: white;
+            text-align: center;
+            line-height: 1.8;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        /* Icon Styles */
+        .icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 10px;
+            display: block;
+            filter: invert(60%) sepia(90%) saturate(500%) hue-rotate(90deg);
+        }
+
+        .txt {
+            display: block;
+            text-align: center;
+            color: #00ff00;
+            font-size: 16px;
+            margin: 5px 0;
+            text-decoration: none;
+        }
+
+        .txtt {
+            display: block;
+            text-align: center;
+            color: cyan;
+            font-size: 18px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00ff00, transparent);
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '◆';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #00ff00;
+            background: #0a0a0a;
+            padding: 0 10px;
+        }
+
+        /* Box Container */
+        .cbox-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .title {
+                font-size: 20px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+            }
+            
+            .box {
+                padding: 15px;
+                margin: 10px 0;
+            }
+            
+            .content-text, .team-text {
+                font-size: 13px;
+            }
+            
+            .cbox-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                width: 180px;
+                left: 10px;
+            }
+            
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .title {
+                font-size: 18px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+
+        /* Terminal-like text effect */
+        .terminal-text {
+            border-right: 2px solid #00ff00;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { border-color: #00ff00; }
+            50% { border-color: transparent; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-toggle" id="nav-toggle">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="index-2.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="white sec bangladesh logo.png" alt="WSB Logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Text Section -->
+        <div class="title">WSB Official</div>
+        <div class="subtitle">We Are Security Researcher Team</div>
+
+        <!-- About Section -->
+        <div class="box">
+            <div class="section-title">About Us</div>
+            <div class="divider"></div>
+            <div class="content-text">
+                <b>We are</b> <span class="highlight">WHITE-SEC BANGLADESH</span> —devout Muslim Blackhat Hackers and elite Spy Agents, a blazing force forged by faith and unyielding determination. With every step, we uphold the divine law of Allah (SWT), our ultimate purpose rooted in pleasing Him alone. Fiercely devoted to the welfare of our nation and its people, we stand as indomitable warriors against tyranny and injustice.<br><br>
+                From the shadows, we operate with precision and power, wielding our skills as a shield for the oppressed and a sword against the oppressors. Since 2025, our relentless pursuit of justice and truth has been fueled by faith, discipline, and an unbreakable resolve. We are not just a team; we are a movement, a symbol of strength, and the embodiment of unstoppable force.
+            </div>
+        </div>
+
+        <!-- Sectors Section -->
+        <div class="box">
+            <img src="https://cdn-icons-png.flaticon.com/512/4442/4442490.png" class="icon">
+            <span class="txt">Sectors</span>
+            <div class="content-text">
+                Hacking<br>
+                Spy Intelligence<br>
+                Tools Development<br>
+                CryptoHack<br>
+                Information & Research
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="box">
+            <img src="Icons/team.png" class="icon">
+            <span class="txtt">Official Team</span>
+            <div class="divider"></div>
+            <div class="team-text">
+                Null (up Cooming Soon)
+            </div>
+        </div>
+
+        <!-- Zone-H Section -->
+        <div class="box">
+            <a href="null/cooming-soon">
+                <img src="http://www.zone-h.org/images/logo.gif" style="width: 30px; height: 10px; display: block; margin: 0 auto;">
+                <span class="txt">Haxor ID Mirror (up cooming soon)</span>
+            </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="cbox-container">
+            <a href="null/cooming-soon" class="box">
+                <img src="https://cdn-icons-png.flaticon.com/512/2504/2504941.png" alt="telegram" class="icon">
+                <span class="txt">Telegram (up cooming-soon)</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close nav when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Terminal typing effect for titles
+        document.addEventListener('DOMContentLoaded', function() {
+            const titles = document.querySelectorAll('.title, .subtitle, .section-title');
+            titles.forEach(title => {
+                title.classList.add('terminal-text');
+            });
+        });
+    </script>
+</body>
+</html>

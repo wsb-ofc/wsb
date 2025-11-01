@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHITE-SEC BANGLADESH OFFICIAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&amp;family=Quantico:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quantico&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="constyles.css"> <!-- External CSS Link -->
+</head>
+<body>
+   <style>
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            z-index: 1000;
+        }
+
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .dot {
+            width: 20px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: none;
+            flex-direction: column;y
+            gap: 15px;
+            align-items: flex-start; /* Align links to the left */
+            position: absolute;
+            top: 50px;
+            left: 10px; /* Open on the left side */
+            background-color: black;
+            width: 150px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: gold;
+        }
+
+        /* Show navigation links when toggled */
+        .nav-links.active {
+            display: flex;
+        }
+
+        /* Add animation for toggle */
+        @keyframes toggle {
+            0% { opacity: 0; transform: translateX(-100%); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        .nav-links.active {
+            animation: toggle 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-toggle" id="nav-toggle">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="index-2.html">Home</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+    <script>
+        // Toggle navigation bar
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="white sec bangladesh logo.png" alt="WHITE-SEC Logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Text Section -->
+    <font face="Quantico" color="white"> <div style="text-align: center; size="15""> WHITE-SEC BANGLADESH OFFICIAL</div> </font> <font face="Quantico" color="gold">
+        <div style="text-align: center;">
+            We Are Security Team
+        </div>
+    </font>
+       </div>
+        <div class="divider"></div>
+        
+        <font face="Quantico" color="white"> <div style="text-align: center; size="15"">Contact Us</div> </font>        </div>
+<div class="about-divider"></div>
+       </div>
+
+       <a href="mailto:null" class="box">
+                  <img src="http://cdn-icons-gif.flaticon.com/11237/11237480.gif" class="icon">
+                <span class="txt">Official Mail<br><font color="cyan">null</font></a></span>
+            </a>            
+        </div>
+        
+           <a href="null" class="box">
+                <img src="https://moein.video/wp-content/uploads/2022/12/Telegram-Logo-GIF-Telegram-Icon-GIF-Royalty-Free-Animated-Icon-GIF-350px-after-effects-project-2.gif" alt="tele" class="icon">
+                <span class="txt">Telegram Channel<br><font color="cyan">null</font></span>
+      </a>
+    </div>    
+    <a href="null" class="box">
+                  <img src="Icons/372108630_DISCORD_LOGO_1080.gif" class="icon">
+                <span class="txt">Discord<br><font color="cyan">NULL</font></a></span>
+            </a>
+                        
+        </div>
+        <a href="null" class="box">
+                  <img src="https://cdn-icons-png.flaticon.com/512/9732/9732782.png" class="icon">
+                <span class="txt">Telegram Bot<br><font color="cyan">null</font></a></span>
+            </a>
+            <br>            
+        </div>
+</div>
+
+</body>
+</html>

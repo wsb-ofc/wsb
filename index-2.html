@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://www.momentcrm.com/embed"></script>
+    <script>
+      MomentCRM('init', {
+        'teamVanityId': 'systemadminbd',
+        'doChat': true,
+        'doTimeTravel': true,
+        'quadClickForFeedback': true,
+      });
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSB Official</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&amp;family=Quantico:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quantico&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000;
+            background-image: 
+                radial-gradient(circle at 20% 30%, #001100 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, #110000 0%, transparent 50%);
+            color: #00ff00;
+            font-family: 'Quantico', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 255, 0, 0.03) 2px,
+                    rgba(0, 255, 0, 0.03) 4px
+                );
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translateX(0) scale(1); }
+            5% { transform: translateX(-2px) scale(1.01); }
+            10% { transform: translateX(2px) scale(0.99); }
+            15% { transform: translateX(-1px) scale(1); }
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border: 2px solid #ff0000;
+            border-radius: 50%;
+            padding: 5px;
+            background: #000;
+            box-shadow: 0 0 20px #ff0000;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            box-shadow: 0 0 30px #ff0000, 0 0 60px #ff0000;
+            transform: scale(1.05);
+        }
+
+        .title-section {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .main-title {
+            font-family: 'Quantico', monospace;
+            font-size: 2.5em;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #00ff00;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-family: 'Quantico', monospace;
+            font-size: 1.2em;
+            color: #ffd700;
+            text-shadow: 0 0 5px #ffd700;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff00, #ff0000, #00ff00, transparent);
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, #ffffff, transparent);
+            animation: scan 2s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .search-container {
+            display: flex;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 15px 20px;
+            background: rgba(0, 20, 0, 0.8);
+            border: 1px solid #00ff00;
+            border-right: none;
+            color: #00ff00;
+            font-family: 'Quantico', monospace;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .search-input::placeholder {
+            color: #008800;
+        }
+
+        .search-input:focus {
+            box-shadow: 0 0 15px #00ff00;
+            background: rgba(0, 30, 0, 0.9);
+        }
+
+        .search-btn {
+            padding: 15px 25px;
+            background: linear-gradient(45deg, #ff0000, #990000);
+            border: 1px solid #ff0000;
+            border-left: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: linear-gradient(45deg, #ff3333, #cc0000);
+            box-shadow: 0 0 20px #ff0000;
+        }
+
+        .search-btn img {
+            filter: invert(1);
+            width: 20px;
+            height: 20px;
+        }
+
+        .box {
+            background: rgba(0, 10, 0, 0.7);
+            border: 1px solid #00ff00;
+            border-radius: 3px;
+            margin: 15px 0;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+        }
+
+        .box:hover {
+            border-color: #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .box:hover::before {
+            left: 100%;
+        }
+
+        .section-title {
+            font-family: 'Quantico', monospace;
+            color: #00ffff;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px #00ffff;
+            text-align: center;
+        }
+
+        .about-text {
+            color: #ffffff;
+            font-family: 'Quantico', monospace;
+            line-height: 1.6;
+            text-align: justify;
+            font-size: 14px;
+        }
+
+        .box a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #00ff00;
+            transition: all 0.3s ease;
+        }
+
+        .box a:hover {
+            color: #ff0000;
+            transform: translateX(5px);
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+            filter: invert(0.8) sepia(1) hue-rotate(90deg) saturate(5);
+            transition: all 0.3s ease;
+        }
+
+        .box a:hover .icon {
+            filter: invert(0.3) sepia(1) hue-rotate(0deg) saturate(10);
+            transform: scale(1.1);
+        }
+
+        .txt {
+            font-family: 'Quantico', monospace;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .cbox-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .cbox {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid #ff0000;
+            border-radius: 3px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cbox:hover {
+            background: rgba(255, 0, 0, 0.2);
+            box-shadow: 0 0 25px #ff0000;
+            transform: translateY(-3px);
+        }
+
+        .cbox .icon {
+            margin: 0 auto 10px;
+            display: block;
+            filter: invert(1);
+        }
+
+        .cbox:hover .icon {
+            filter: invert(0.8) sepia(1) hue-rotate(0deg) saturate(10);
+        }
+
+        /* Terminal-like effect for text */
+        .typing-effect {
+            overflow: hidden;
+            border-right: 2px solid #00ff00;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00ff00 }
+        }
+
+        /* Danger pulse animation */
+        @keyframes danger-pulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.6); }
+        }
+
+        .danger-element {
+            animation: danger-pulse 2s infinite;
+        }
+
+        /* Matrix rain effect background */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Matrix Background -->
+    <div class="matrix-bg" id="matrixBg"></div>
+
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="white sec bangladesh logo.png" alt="WSB Logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Text Section -->
+        <div class="title-section">
+            <div class="main-title typing-effect">WSB Official</div>
+            <div class="subtitle">We Are Security Researcher Team</div>
+        </div>
+
+        <!-- Divider Line -->
+        <div class="divider"></div>
+        
+        <!-- Search Bar Section -->
+        <form method="GET" action="cooming-soon">
+            <div class="search-container">
+                <input type="text" name="search" placeholder="SEARCH FOR VULNERABILITIES..." class="search-input">
+                <button class="search-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/9196/9196671.png" alt="Search Icon">
+                </button>
+            </div>
+        </form>
+
+        <!-- About WSB Section -->
+        <div class="box danger-element">
+            <div class="section-title">About WSB</div>
+            <div class="about-text">
+                Welcome to WHITE-SEC BANGLADESH, a collective of passionate and dedicated individuals committed to standing up against injustice and raising our voices for a better world. Since our inception in April 2025, we have embarked on a mission to shed light on issues often overlooked and to challenge those who misuse power.<br><br>
+                We Are Muslim BlackHats & Spy Agents. Our mission is to expose, disrupt, and hold accountable those who engage in practices that harm society. We have targeted government websites, media outlets, and business organizations to highlight issues such as corruption, misinformation, and injustice. We always work for Islam & Shariah.
+            </div>
+        </div>
+
+        <!-- Menu Sections -->
+        <div class="box">
+            <a href="about.html">
+                <img src="Icons/personal.png" alt="About Us" class="icon">
+                <span class="txt">About Us</span>
+            </a>
+        </div>
+        
+        <div class="box">
+            <a href="hacking-tools/index.html">
+                <img src="Icons/hacking.png" alt="Hacking Tools" class="icon">
+                <span class="txt">Hacking Tools</span>
+            </a>
+        </div>
+
+        <div class="box">
+            <a href="botnet/index.html">
+                <img src="Icons/malware.png" alt="Botnet" class="icon">
+                <span class="txt">Botnet</span>
+            </a>
+        </div>
+
+        <div class="box">
+            <a href="cryptocurrency/index.html">
+                <img src="Icons/bitcoin.png" alt="Cryptocurrency" class="icon">
+                <span class="txt">Cryptocurrency</span>
+            </a>
+        </div>
+        
+        <div class="box">
+            <a href="official-posts/index.html">
+                <img src="Icons/blog.png" alt="Official Posts" class="icon">
+                <span class="txt">Official Posts</span>
+            </a>
+        </div>
+
+        <div class="box">
+            <a href="cooming-soon/">
+                <img src="Icons/wanted.png" alt="Archives" class="icon">
+                <span class="txt">WSB Archives</span>
+            </a>
+        </div>
+        
+        <!-- Action Boxes -->
+        <div class="cbox-container">
+            <a href="cooming/soon/" class="cbox">
+                <img src="https://cdn-icons-png.flaticon.com/512/2504/2504941.png" alt="Telegram" class="icon">
+                <span class="txt">Join Telegram</span>
+            </a>
+
+            <a href="contact.html" class="cbox">
+                <img src="https://cdn-icons-png.flaticon.com/512/8898/8898833.png" alt="Contact" class="icon">
+                <span class="txt">Contact Us</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Simple matrix rain effect
+        const matrixBg = document.getElementById('matrixBg');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        
+        function createMatrix() {
+            const columns = Math.floor(window.innerWidth / 20);
+            let html = '';
+            
+            for (let i = 0; i < columns; i++) {
+                const length = Math.floor(Math.random() * 20) + 10;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+                
+                html += `<div class="matrix-column" style="left: ${i * 20}px; animation-delay: ${delay}s; animation-duration: ${duration}s;">`;
+                
+                for (let j = 0; j < length; j++) {
+                    const char = chars[Math.floor(Math.random() * chars.length)];
+                    html += `<span style="animation-delay: ${j * 0.1}s;">${char}</span>`;
+                }
+                
+                html += '</div>';
+            }
+            
+            matrixBg.innerHTML = html;
+        }
+
+        // Initialize matrix on load
+        createMatrix();
+    </script>
+</body>
+</html>
