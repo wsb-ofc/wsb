@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawon Mir Course Leaked - WSB Official</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(40, 40, 0, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(40, 40, 0, 0.1) 0%, transparent 20%);
+            color: #ffff00;
+            font-family: 'Quantico', monospace;
+            min-height: 100vh;
+            padding-top: 60px;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: rgba(20, 20, 0, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+            border-bottom: 1px solid #ffff00;
+        }
+
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .dot {
+            width: 20px;
+            height: 2px;
+            background-color: #ffff00;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .nav-toggle:hover .dot {
+            background-color: #ffaa00;
+            box-shadow: 0 0 10px #ffaa00;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            background: rgba(10, 10, 0, 0.95);
+            width: 200px;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ffff00;
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+        }
+
+        .nav-links.active {
+            display: flex;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-links a {
+            color: #ffff00;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-left: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffaa00;
+            border-left: 2px solid #ffaa00;
+            text-shadow: 0 0 10px #ffaa00;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Logo Section */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: cryptoGlitch 4s infinite;
+        }
+
+        @keyframes cryptoGlitch {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            2% { transform: translateX(-1px) rotate(-0.5deg); }
+            4% { transform: translateX(1px) rotate(0.5deg); }
+            6% { transform: translateX(-1px) rotate(0deg); }
+            98% { transform: translateX(0) rotate(0deg); }
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #ffff00;
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            box-shadow: 0 0 30px rgba(255, 255, 0, 0.8);
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        /* Text Sections */
+        .heading {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            margin: 10px 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .sub-heading {
+            text-align: center;
+            color: #ffaa00;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ffff00, transparent);
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '₿';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffff00;
+            background: #0a0a0a;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+
+        /* Post Box */
+        .post-box {
+            background: rgba(20, 20, 0, 0.3);
+            border: 1px solid #ffff00;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 0, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .post-box:hover::before {
+            left: 100%;
+        }
+
+        .post-box:hover {
+            border-color: #ffaa00;
+            box-shadow: 0 0 25px rgba(255, 170, 0, 0.4);
+        }
+
+        /* Post Title */
+        .post-title {
+            color: #ffaa00 !important;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(255, 170, 0, 0.7);
+            border-bottom: 2px solid #ffaa00;
+            padding-bottom: 10px;
+        }
+
+        /* Post Content */
+        .post-content {
+            color: white !important;
+            font-size: 16px;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .post-content code {
+            background: rgba(255, 255, 0, 0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: 1px solid #ffff00;
+            font-family: 'Courier New', monospace;
+            color: #ffff00;
+        }
+
+        .post-content pre {
+            background: rgba(20, 20, 0, 0.5);
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ffff00;
+            overflow-x: auto;
+            margin: 15px 0;
+            color: #ffff00;
+        }
+
+        .post-content a {
+            color: #ffaa00;
+            text-decoration: none;
+            border-bottom: 1px dotted #ffaa00;
+        }
+
+        .post-content a:hover {
+            color: #ffff00;
+            border-bottom: 1px solid #ffff00;
+            text-shadow: 0 0 5px #ffff00;
+        }
+
+        /* Post Image */
+        .post-image {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ffff00;
+            border-radius: 8px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .post-image:hover {
+            border-color: #ffaa00;
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.5);
+            transform: scale(1.02);
+        }
+
+        /* Download Section */
+        #image-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #image-section a {
+            text-decoration: none;
+        }
+
+        #image-section span {
+            color: #ffaa00;
+            border: 1px solid #ffaa00;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        #image-section span:hover {
+            background: rgba(255, 170, 0, 0.1);
+            box-shadow: 0 0 15px rgba(255, 170, 0, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation Buttons */
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .nav-button {
+            padding: 12px 25px;
+            background: rgba(255, 255, 0, 0.1);
+            color: #ffff00;
+            text-decoration: none;
+            border: 1px solid #ffff00;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-family: 'Quantico', monospace;
+            text-align: center;
+            flex: 1;
+            max-width: 150px;
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 0, 0.2);
+            color: #ffaa00;
+            border-color: #ffaa00;
+            box-shadow: 0 0 15px rgba(255, 170, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Popup Modal */
+        .popup-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(5px);
+        }
+
+        .popup-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid #ffff00;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255, 255, 0, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #ffff00;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2001;
+        }
+
+        .close-btn:hover {
+            color: #ff4444;
+            text-shadow: 0 0 10px #ff4444;
+            transform: scale(1.1);
+        }
+
+        /* Crypto Animation */
+        .crypto-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.05;
+        }
+
+        .bitcoin {
+            position: absolute;
+            font-size: 20px;
+            color: #ffff00;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .logo {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .heading {
+                font-size: 20px;
+            }
+            
+            .post-box {
+                padding: 20px;
+            }
+            
+            .post-title {
+                font-size: 22px;
+            }
+            
+            .post-content {
+                font-size: 14px;
+            }
+            
+            .navigation-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-button {
+                max-width: 200px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                width: 180px;
+                left: 10px;
+            }
+            
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .heading {
+                font-size: 18px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .post-box {
+                padding: 15px;
+            }
+            
+            .post-title {
+                font-size: 20px;
+            }
+        }
+
+        /* Terminal Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ffff00;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffaa00;
+        }
+
+        /* Crypto Price Ticker Effect */
+        .price-ticker {
+            position: relative;
+            overflow: hidden;
+            height: 20px;
+            margin: 10px 0;
+        }
+
+        .ticker-content {
+            position: absolute;
+            white-space: nowrap;
+            animation: ticker 20s linear infinite;
+            color: #ffaa00;
+            font-size: 12px;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Crypto Animation Background -->
+    <div class="crypto-animation" id="crypto-animation"></div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-toggle" id="nav-toggle">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="../index-2.html">Home</a>
+            <a href="index-2.html">Post List</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="white sec bangladesh logo.png" alt="WSB Logo" class="logo">
+            </a>
+        </div>
+
+        <p class="heading">WSB Official</p>
+        <p class="sub-heading">We Are Security Researcher Team</p>
+        
+        <!-- Crypto Price Ticker -->
+        <div class="price-ticker">
+            <div class="ticker-content">
+                ₿ BITCOIN • ETHEREUM • BINANCE COIN • SOLANA • CARDANO • RIPPLE • POLKADOT • DOGECOIN • LITECOIN • CHAINLINK •
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+
+        <!-- Post Section -->
+        <div class="post-box">
+            <h2 class="post-title">Shawon Mir Course Leaked</h2>
+            
+            <!-- Display the post content with HTML tags intact -->
+            <div class="post-content"><h2 class=\"post-title\" style=\"margin: 0px 0px 15px; padding: 0px; box-sizing: border-box; font-size: 20px; font-family: Quantico, serif;\">Coirse Leaked Shwon Mir (So called Ethical Scammer)</h2><p class=\"post-content\" style=\"margin: 0px 0px 15px; padding: 0px; box-sizing: border-box; font-size: medium; font-family: Quantico, serif; text-align: center;\">Bangladeshi So called Ehical Scammer Shwaon Mir Course Leaked <br style=\"margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"margin: 0px; padding: 0px; box-sizing: border-box;\">Season - 9<br style=\"margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"margin: 0px; padding: 0px; box-sizing: border-box;\">Download  Link: <a href=../_https_/systemadminbd.com/_https_/limewire.com/d/NxULU.html#zrYfX9mkws\\%22\" style=\"margin: 0px; padding: 0px; box-sizing: border-box;\">https://limewire.com/d/NxULU#zrYfX9mkws</a></p><div><br></div></div>
+
+                        
+            <br>
+
+            
+            <!-- Navigation Buttons -->
+            <div class="navigation-buttons">
+                                    <div></div>
+                
+                            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up Image Modal -->
+    <div id="popup-modal" class="popup-modal">
+        <span class="close-btn" id="close-btn">&times;</span>
+        <img class="popup-content" id="popup-content" alt="Popup Image">
+    </div>
+
+    <script>
+        // Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close nav when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Image Popup Modal
+        const postImage = document.getElementById('post-image');
+        const popupModal = document.getElementById('popup-modal');
+        const popupContent = document.getElementById('popup-content');
+        const closeBtn = document.getElementById('close-btn');
+
+        if (postImage) {
+            postImage.addEventListener('click', () => {
+                popupContent.src = postImage.src;
+                popupModal.style.display = 'block';
+            });
+        }
+
+        closeBtn.addEventListener('click', () => {
+            popupModal.style.display = 'none';
+        });
+
+        popupModal.addEventListener('click', (e) => {
+            if (e.target === popupModal) {
+                popupModal.style.display = 'none';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                popupModal.style.display = 'none';
+            }
+        });
+
+        // Crypto Animation
+        function createBitcoin() {
+            const cryptoAnim = document.getElementById('crypto-animation');
+            const bitcoin = document.createElement('div');
+            bitcoin.className = 'bitcoin';
+            bitcoin.innerHTML = '₿';
+            bitcoin.style.left = Math.random() * 100 + 'vw';
+            bitcoin.style.animationDelay = Math.random() * 10 + 's';
+            bitcoin.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            cryptoAnim.appendChild(bitcoin);
+            
+            setTimeout(() => {
+                bitcoin.remove();
+            }, 10000);
+        }
+
+        // Create initial crypto animation
+        for (let i = 0; i < 10; i++) {
+            setTimeout(createBitcoin, i * 1000);
+        }
+        setInterval(createBitcoin, 2000);
+
+        // Add crypto styling to code blocks
+        document.addEventListener('DOMContentLoaded', function() {
+            const codeBlocks = document.querySelectorAll('code');
+            codeBlocks.forEach(block => {
+                block.style.fontFamily = "'Courier New', monospace";
+                block.style.background = 'rgba(255, 255, 0, 0.1)';
+                block.style.padding = '2px 6px';
+                block.style.borderRadius = '3px';
+                block.style.border = '1px solid #ffff00';
+                block.style.color = '#ffff00';
+            });
+        });
+    </script>
+</body>
+</html>

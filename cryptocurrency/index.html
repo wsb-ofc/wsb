@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency - WHITE-SEC BANGLADESH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(40, 40, 0, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(40, 40, 0, 0.1) 0%, transparent 20%);
+            color: #ffd700;
+            font-family: 'Quantico', monospace;
+            min-height: 100vh;
+            padding-top: 60px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: rgba(20, 20, 0, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+            border-bottom: 1px solid #ffd700;
+        }
+
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .dot {
+            width: 20px;
+            height: 2px;
+            background-color: #ffd700;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .nav-toggle:hover .dot {
+            background-color: #ffaa00;
+            box-shadow: 0 0 10px #ffaa00;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            background: rgba(10, 10, 0, 0.95);
+            width: 200px;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .nav-links.active {
+            display: flex;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-links a {
+            color: #ffd700;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-left: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffaa00;
+            border-left: 2px solid #ffaa00;
+            text-shadow: 0 0 10px #ffaa00;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Logo Section */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: cryptoFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes cryptoFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(1deg); }
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #ffd700;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            box-shadow: 0 0 35px rgba(255, 215, 0, 0.9);
+            transform: scale(1.08) rotate(5deg);
+        }
+
+        /* Text Sections */
+        .title {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            margin: 10px 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #ffaa00;
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+        }
+
+        /* Search Bar */
+        .search-container {
+            display: flex;
+            max-width: 500px;
+            margin: 20px auto;
+            background: rgba(20, 20, 0, 0.3);
+            border: 1px solid #ffd700;
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .search-container:focus-within {
+            border-color: #ffaa00;
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.4);
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 20px;
+            background: transparent;
+            border: none;
+            color: #ffd700;
+            font-family: 'Quantico', monospace;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .search-input::placeholder {
+            color: #ffd700;
+            opacity: 0.7;
+        }
+
+        .search-btn {
+            padding: 12px 20px;
+            background: rgba(255, 215, 0, 0.1);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        .search-btn img {
+            width: 16px;
+            height: 16px;
+            filter: invert(80%) sepia(100%) saturate(1000%) hue-rotate(0deg);
+        }
+
+        /* Category Header */
+        .cat {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .heading {
+            color: #ffd700;
+            font-size: 32px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 10px;
+            display: inline-block;
+            animation: goldPulse 2s infinite;
+        }
+
+        @keyframes goldPulse {
+            0%, 100% { 
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+                transform: scale(1);
+            }
+            50% { 
+                text-shadow: 0 0 30px rgba(255, 215, 0, 1);
+                transform: scale(1.02);
+            }
+        }
+
+        /* Box Styles */
+        .box {
+            background: rgba(20, 20, 0, 0.3);
+            border: 1px solid #ffd700;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .box:hover::before {
+            left: 100%;
+        }
+
+        .box:hover {
+            border-color: #ffaa00;
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* Post Items */
+        .post-item {
+            text-align: center;
+        }
+
+        .post-title {
+            color: #ffaa00 !important;
+            font-size: 22px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(255, 170, 0, 0.6);
+        }
+
+        .view-post-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255, 215, 0, 0.1);
+            color: #ffd700;
+            text-decoration: none;
+            border: 1px solid #ffd700;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-family: 'Quantico', monospace;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .view-post-button:hover {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffaa00;
+            border-color: #ffaa00;
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.4);
+            transform: scale(1.05);
+        }
+
+        /* Panel for social links */
+        .panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .cbox {
+            background: rgba(20, 20, 0, 0.3);
+            border: 1px solid #ffd700;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cbox:hover {
+            border-color: #ffaa00;
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            filter: invert(80%) sepia(100%) saturate(1000%) hue-rotate(0deg);
+        }
+
+        .txt {
+            color: #ffd700;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '₿';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffd700;
+            background: #0a0a0a;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+
+        /* No Posts Message */
+        .no-posts {
+            text-align: center;
+            color: #ffd700;
+            font-size: 18px;
+            margin: 40px 0;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            padding: 20px;
+            border: 1px dashed #ffd700;
+            border-radius: 8px;
+            background: rgba(20, 20, 0, 0.2);
+        }
+
+        /* Crypto Animation */
+        .crypto-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .crypto-coin {
+            position: absolute;
+            font-size: 24px;
+            color: #ffd700;
+            animation: coinFloat 8s linear infinite;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        @keyframes coinFloat {
+            0% { 
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+                opacity: 0; 
+            }
+            10% { 
+                opacity: 1; 
+            }
+            90% { 
+                opacity: 1; 
+            }
+            100% { 
+                transform: translateY(-100px) rotate(360deg) scale(1);
+                opacity: 0; 
+            }
+        }
+
+        /* Crypto Ticker */
+        .crypto-ticker {
+            position: relative;
+            overflow: hidden;
+            height: 25px;
+            margin: 15px 0;
+            background: rgba(20, 20, 0, 0.3);
+            border: 1px solid #ffd700;
+            border-radius: 3px;
+        }
+
+        .ticker-content {
+            position: absolute;
+            white-space: nowrap;
+            animation: ticker 25s linear infinite;
+            color: #ffaa00;
+            font-size: 13px;
+            padding: 4px 0;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .title {
+                font-size: 20px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .heading {
+                font-size: 26px;
+            }
+            
+            .search-container {
+                margin: 15px auto;
+            }
+            
+            .panel {
+                grid-template-columns: 1fr;
+            }
+            
+            .post-title {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                width: 180px;
+                left: 10px;
+            }
+            
+            .logo {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .title {
+                font-size: 18px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .box, .cbox {
+                padding: 15px;
+            }
+            
+            .heading {
+                font-size: 22px;
+            }
+            
+            .crypto-ticker {
+                height: 20px;
+            }
+            
+            .ticker-content {
+                font-size: 11px;
+            }
+        }
+
+        /* Terminal Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ffd700;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffaa00;
+        }
+
+        /* Crypto Currency Symbols */
+        .crypto-symbols {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Crypto Animation Background -->
+    <div class="crypto-animation" id="crypto-animation"></div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-toggle" id="nav-toggle">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="../index-2.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="white sec bangladesh logo.png" alt="WHITE-SEC Logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Text Section -->
+        <div class="title">WHITE-SEC BANGLADESH OFFICIAL</div>
+        <div class="subtitle">We Are Security Researcher Team</div>
+
+        <!-- Crypto Ticker -->
+        <div class="crypto-ticker">
+            <div class="ticker-content">
+                <span class="crypto-symbols">₿</span> BITCOIN $45,231.50 ↑2.3% • <span class="crypto-symbols">Ξ</span> ETHEREUM $3,215.67 ↑1.8% • <span class="crypto-symbols">●</span> BINANCE COIN $567.89 ↑0.9% • <span class="crypto-symbols">◎</span> SOLANA $102.45 ↑5.2% • <span class="crypto-symbols">₳</span> CARDANO $0.58 ↑1.1% • <span class="crypto-symbols">✕</span> RIPPLE $0.62 ↑0.7% •
+            </div>
+        </div>
+
+        <!-- Divider Line -->
+        <div class="divider"></div>
+        
+        <!-- Search Bar Section -->
+        <form method="GET" action="null">
+            <div class="search-container">
+                <input type="text" name="search" placeholder="Search crypto posts..." class="search-input">
+                <button class="search-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/9196/9196671.png" alt="Search Icon">
+                </button>
+            </div>
+        </form>
+
+        <!-- Cryptocurrency Category Section -->
+        <div class="cat">
+            <p class="heading">Cryptocurrency - WHITE-SEC</p>
+        </div>
+
+        <!-- Loop through posts for "cryptocurrency" category -->
+                                    <div class="box">
+                    <div class="post-item">
+                        <h3 class="post-title">Btc Hunter All In One Version</h3>
+                        <a href="post40ac.html?id=35" class="view-post-button">Access Crypto Tools</a>
+                    </div>
+                </div>
+                            <div class="box">
+                    <div class="post-item">
+                        <h3 class="post-title">Bitcoin wallet with Pass (encrypted)</h3>
+                        <a href="postd8c4.html?id=77" class="view-post-button">Access Crypto Tools</a>
+                    </div>
+                </div>
+                    
+        <!-- Join Telegram and Contact Us Box -->
+        <div class="panel">
+            <a href="NULL/" class="cbox">
+                <img src="https://cdn-icons-png.flaticon.com/512/2504/2504941.png" alt="Telegram" class="icon">
+                <span class="txt">Join Telegram</span>
+            </a>
+
+            <a href="mailto:NULL" class="cbox">
+                <img src="https://cdn-icons-png.flaticon.com/512/8898/8898833.png" alt="Contact Us" class="icon">
+                <span class="txt">Contact Us</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close nav when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Crypto Animation
+        function createCryptoCoin() {
+            const cryptoAnim = document.getElementById('crypto-animation');
+            const symbols = ['₿', 'Ξ', '●', '◎', '₳', '✕', '◈', '◆'];
+            const coin = document.createElement('div');
+            coin.className = 'crypto-coin';
+            coin.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+            coin.style.left = Math.random() * 100 + 'vw';
+            coin.style.animationDelay = Math.random() * 8 + 's';
+            coin.style.fontSize = (Math.random() * 20 + 16) + 'px';
+            cryptoAnim.appendChild(coin);
+            
+            setTimeout(() => {
+                coin.remove();
+            }, 8000);
+        }
+
+        // Create initial crypto animation
+        for (let i = 0; i < 8; i++) {
+            setTimeout(createCryptoCoin, i * 1000);
+        }
+        setInterval(createCryptoCoin, 1500);
+
+        // Update ticker content periodically (simulated)
+        function updateTicker() {
+            const ticker = document.querySelector('.ticker-content');
+            const prices = [
+                '₿ BITCOIN $' + (45231.50 + Math.random() * 1000).toFixed(2) + ' ' + (Math.random() > 0.5 ? '↑' : '↓') + (Math.random() * 3).toFixed(1) + '%',
+                'Ξ ETHEREUM $' + (3215.67 + Math.random() * 100).toFixed(2) + ' ' + (Math.random() > 0.5 ? '↑' : '↓') + (Math.random() * 2).toFixed(1) + '%',
+                '● BINANCE $' + (567.89 + Math.random() * 10).toFixed(2) + ' ' + (Math.random() > 0.5 ? '↑' : '↓') + (Math.random() * 1.5).toFixed(1) + '%',
+                '◎ SOLANA $' + (102.45 + Math.random() * 5).toFixed(2) + ' ' + (Math.random() > 0.5 ? '↑' : '↓') + (Math.random() * 4).toFixed(1) + '%'
+            ];
+            ticker.innerHTML = prices.join(' • ') + ' • ';
+        }
+
+        // Update ticker every 30 seconds
+        setInterval(updateTicker, 30000);
+    </script>
+</body>
+
+<!-- Mirrored from systemadminbd.com/cryptocurrency/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 01 Nov 2025 11:49:12 GMT -->
+</html>

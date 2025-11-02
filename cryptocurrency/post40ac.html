@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Btc Hunter All In One Version - WHITE-SEC BANGLADESH OFFICIAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 40, 40, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 40, 40, 0.1) 0%, transparent 20%);
+            color: #00ffff;
+            font-family: 'Quantico', monospace;
+            min-height: 100vh;
+            padding-top: 60px;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: rgba(0, 20, 20, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+            border-bottom: 1px solid #00ffff;
+        }
+
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .dot {
+            width: 20px;
+            height: 2px;
+            background-color: #00ffff;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .nav-toggle:hover .dot {
+            background-color: #00aaff;
+            box-shadow: 0 0 10px #00aaff;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            background: rgba(0, 10, 10, 0.95);
+            width: 200px;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .nav-links.active {
+            display: flex;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-links a {
+            color: #00ffff;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-left: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00aaff;
+            border-left: 2px solid #00aaff;
+            text-shadow: 0 0 10px #00aaff;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Logo Section */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: matrixGlitch 4s infinite;
+        }
+
+        @keyframes matrixGlitch {
+            0%, 100% { transform: translateX(0) scale(1); }
+            2% { transform: translateX(-1px) scale(1.01); }
+            4% { transform: translateX(1px) scale(0.99); }
+            6% { transform: translateX(-1px) scale(1); }
+            98% { transform: translateX(0) scale(1); }
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+            transform: scale(1.05);
+        }
+
+        /* Text Sections */
+        .heading {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            margin: 10px 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .sub-heading {
+            text-align: center;
+            color: #00aaff;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '⚡';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #00ffff;
+            background: #0a0a0a;
+            padding: 0 10px;
+            font-size: 12px;
+        }
+
+        /* Post Box */
+        .post-box {
+            background: rgba(0, 20, 20, 0.3);
+            border: 1px solid #00ffff;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .post-box:hover::before {
+            left: 100%;
+        }
+
+        .post-box:hover {
+            border-color: #00aaff;
+            box-shadow: 0 0 25px rgba(0, 170, 255, 0.4);
+        }
+
+        /* Post Title */
+        .post-title {
+            color: #00aaff !important;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(0, 170, 255, 0.7);
+            border-bottom: 2px solid #00aaff;
+            padding-bottom: 10px;
+        }
+
+        /* Post Content */
+        .post-content {
+            color: white !important;
+            font-size: 16px;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .post-content code {
+            background: rgba(0, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: 1px solid #00ffff;
+            font-family: 'Courier New', monospace;
+            color: #00ffff;
+        }
+
+        .post-content pre {
+            background: rgba(0, 20, 20, 0.5);
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #00ffff;
+            overflow-x: auto;
+            margin: 15px 0;
+            color: #00ffff;
+        }
+
+        .post-content a {
+            color: #00aaff;
+            text-decoration: none;
+            border-bottom: 1px dotted #00aaff;
+        }
+
+        .post-content a:hover {
+            color: #00ffff;
+            border-bottom: 1px solid #00ffff;
+            text-shadow: 0 0 5px #00ffff;
+        }
+
+        /* Post Image */
+        .post-image {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #00ffff;
+            border-radius: 8px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .post-image:hover {
+            border-color: #00aaff;
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+            transform: scale(1.02);
+        }
+
+        /* Download Section */
+        #image-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #image-section a {
+            text-decoration: none;
+        }
+
+        #image-section span {
+            color: #00aaff;
+            border: 1px solid #00aaff;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        #image-section span:hover {
+            background: rgba(0, 170, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation Buttons */
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .nav-button {
+            padding: 12px 25px;
+            background: rgba(0, 255, 255, 0.1);
+            color: #00ffff;
+            text-decoration: none;
+            border: 1px solid #00ffff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-family: 'Quantico', monospace;
+            text-align: center;
+            flex: 1;
+            max-width: 150px;
+        }
+
+        .nav-button:hover {
+            background: rgba(0, 255, 255, 0.2);
+            color: #00aaff;
+            border-color: #00aaff;
+            box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Popup Modal */
+        .popup-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(5px);
+        }
+
+        .popup-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #00ffff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2001;
+        }
+
+        .close-btn:hover {
+            color: #ff4444;
+            text-shadow: 0 0 10px #ff4444;
+            transform: scale(1.1);
+        }
+
+        /* Matrix Animation */
+        .matrix-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.03;
+        }
+
+        .matrix-char {
+            position: absolute;
+            color: #00ffff;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            animation: matrixFall 5s linear infinite;
+            text-shadow: 0 0 5px #00ffff;
+        }
+
+        @keyframes matrixFall {
+            0% { 
+                transform: translateY(-100px);
+                opacity: 0; 
+            }
+            10% { 
+                opacity: 1; 
+            }
+            90% { 
+                opacity: 1; 
+            }
+            100% { 
+                transform: translateY(100vh);
+                opacity: 0; 
+            }
+        }
+
+        /* Binary Stream Effect */
+        .binary-stream {
+            position: absolute;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            animation: binaryFlow 8s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes binaryFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100vw); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .logo {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .heading {
+                font-size: 20px;
+            }
+            
+            .post-box {
+                padding: 20px;
+            }
+            
+            .post-title {
+                font-size: 22px;
+            }
+            
+            .post-content {
+                font-size: 14px;
+            }
+            
+            .navigation-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-button {
+                max-width: 200px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                width: 180px;
+                left: 10px;
+            }
+            
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .heading {
+                font-size: 18px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .post-box {
+                padding: 15px;
+            }
+            
+            .post-title {
+                font-size: 20px;
+            }
+        }
+
+        /* Terminal Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ffff;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00aaff;
+        }
+
+        /* Hacking Terminal Effect */
+        .terminal-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix Animation Background -->
+    <div class="matrix-animation" id="matrix-animation"></div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-toggle" id="nav-toggle">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="../index-2.html">Home</a>
+            <a href="index-2.html">Post List</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="white sec bangladesh logo.png" alt="WHITE-SEC Logo" class="logo">
+            </a>
+        </div>
+
+        <p class="heading">WHITE-SEC BANGLADESH OFFICIAL</p>
+        <p class="sub-heading">We Are Security Researcher Team</p>
+        <div class="divider"></div>
+
+        <!-- Post Section -->
+        <div class="post-box">
+            <h2 class="post-title">Btc Hunter All In One Version</h2>
+            
+            <!-- Display the post content with HTML tags intact -->
+            <div class="post-content"><div style="text-align: center;"><font style="" color="#00ffff"><b>Btc Hunter Tool (All in one version) : Leaked By Systemadminbd</b></font></div><div style="text-align: center;"><font color="#ff0000">__________________</font>&nbsp;</div><div style="text-align: center;"><font color="#00ff11"><b>Features:</b></font></div><div style="text-align: center;">*Find And Check Blance Automatically (Tron,Btc,many)&nbsp;</div><div style="text-align: center;">*Compressed Key&nbsp;</div><div style="text-align: center;">*Recent Transection Check&nbsp;</div><div style="text-align: center;">*Low End Pc Supported</div><div style="text-align: center;">____________</div><div style="text-align: center;"><br></div><div style="text-align: center;"><b><u>For Password, Knock To:</u></b></div><div style="text-align: center;"> https://t.me/systemadminbdbot</div><div style="text-align: center;"><br></div><div style="text-align: center;"><font color="#00ff00"><u><b>Download Link:</b></u></font></div><div style="text-align: center;">https://systemadminbd.com/uploads/67547937cc6fc2.09642792.zip</div></div>
+
+                            <img src="../uploads/675486900ee965.27093140.png" alt="Post Image" class="post-image" id="post-image">
+                        
+            <br>
+
+                            <div id="image-section">
+                    <p style="color: #00aaff; margin-bottom: 10px;">Uploaded File:</p>
+                    <a href="../uploads/675486900ee965.27093140.png" download>
+                        <span>Download File</span>
+                    </a>
+                </div>
+                <br>
+            
+            <!-- Navigation Buttons -->
+            <div class="navigation-buttons">
+                                    <div></div>
+                
+                                    <a href="postd8c4.html?id=77" class="nav-button">Next →</a>
+                            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up Image Modal -->
+    <div id="popup-modal" class="popup-modal">
+        <span class="close-btn" id="close-btn">&times;</span>
+        <img class="popup-content" id="popup-content" alt="Popup Image">
+    </div>
+
+    <script>
+        // Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close nav when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Image Popup Modal
+        const postImage = document.getElementById('post-image');
+        const popupModal = document.getElementById('popup-modal');
+        const popupContent = document.getElementById('popup-content');
+        const closeBtn = document.getElementById('close-btn');
+
+        if (postImage) {
+            postImage.addEventListener('click', () => {
+                popupContent.src = postImage.src;
+                popupModal.style.display = 'block';
+            });
+        }
+
+        closeBtn.addEventListener('click', () => {
+            popupModal.style.display = 'none';
+        });
+
+        popupModal.addEventListener('click', (e) => {
+            if (e.target === popupModal) {
+                popupModal.style.display = 'none';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                popupModal.style.display = 'none';
+            }
+        });
+
+        // Matrix Animation
+        function createMatrixChar() {
+            const matrixAnim = document.getElementById('matrix-animation');
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            const char = document.createElement('div');
+            char.className = 'matrix-char';
+            char.innerHTML = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + 'vw';
+            char.style.animationDelay = Math.random() * 5 + 's';
+            char.style.fontSize = (Math.random() * 8 + 10) + 'px';
+            matrixAnim.appendChild(char);
+            
+            setTimeout(() => {
+                char.remove();
+            }, 5000);
+        }
+
+        // Create initial matrix animation
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createMatrixChar, i * 250);
+        }
+        setInterval(createMatrixChar, 100);
+
+        // Add terminal cursor effect to titles
+        document.addEventListener('DOMContentLoaded', function() {
+            const titles = document.querySelectorAll('.post-title');
+            titles.forEach(title => {
+                title.classList.add('terminal-cursor');
+            });
+
+            // Style code blocks
+            const codeBlocks = document.querySelectorAll('code');
+            codeBlocks.forEach(block => {
+                block.style.fontFamily = "'Courier New', monospace";
+                block.style.background = 'rgba(0, 255, 255, 0.1)';
+                block.style.padding = '2px 6px';
+                block.style.borderRadius = '3px';
+                block.style.border = '1px solid #00ffff';
+                block.style.color = '#00ffff';
+            });
+        });
+
+        // Binary stream effect
+        function createBinaryStream() {
+            const binary = document.createElement('div');
+            binary.className = 'binary-stream';
+            binary.innerHTML = '0101010101101110011011000110111101100011011010110110010101100100';
+            binary.style.top = Math.random() * 100 + 'vh';
+            binary.style.animationDelay = Math.random() * 8 + 's';
+            document.body.appendChild(binary);
+            
+            setTimeout(() => {
+                binary.remove();
+            }, 8000);
+        }
+
+        // Create binary streams
+        setInterval(createBinaryStream, 3000);
+    </script>
+</body>
+
+<!-- Mirrored from systemadminbd.com/cryptocurrency/post.php?id=35 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 01 Nov 2025 11:49:35 GMT -->
+</html>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from systemadminbd.com/official-posts/post.php?id=74 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 01 Nov 2025 11:50:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> বাল্যবিবাহ  ও আমাদের সমাজ - WHITE-SEC BANGLADESH/title>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(40, 0, 40, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(40, 0, 40, 0.1) 0%, transparent 20%);
+            color: #ff00ff;
+            font-family: 'Quantico', monospace;
+            min-height: 100vh;
+            padding-top: 60px;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: rgba(20, 0, 20, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+            border-bottom: 1px solid #ff00ff;
+        }
+
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .dot {
+            width: 20px;
+            height: 2px;
+            background-color: #ff00ff;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .nav-toggle:hover .dot {
+            background-color: #cc00cc;
+            box-shadow: 0 0 10px #cc00cc;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            background: rgba(10, 0, 10, 0.95);
+            width: 200px;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff00ff;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+        }
+
+        .nav-links.active {
+            display: flex;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-links a {
+            color: #ff00ff;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-left: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #cc00cc;
+            border-left: 2px solid #cc00cc;
+            text-shadow: 0 0 10px #cc00cc;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Logo Section */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: officialGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes officialGlow {
+            0%, 100% { 
+                filter: drop-shadow(0 0 10px rgba(255, 0, 255, 0.5));
+                transform: scale(1);
+            }
+            50% { 
+                filter: drop-shadow(0 0 20px rgba(255, 0, 255, 0.8));
+                transform: scale(1.02);
+            }
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #ff00ff;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.8);
+            transform: scale(1.05);
+        }
+
+        /* Text Sections */
+        .heading {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            margin: 10px 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .sub-heading {
+            text-align: center;
+            color: #cc00cc;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(204, 0, 204, 0.5);
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ff00ff, transparent);
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '⚜️';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff00ff;
+            background: #0a0a0a;
+            padding: 0 10px;
+            font-size: 12px;
+        }
+
+        /* Post Box */
+        .post-box {
+            background: rgba(20, 0, 20, 0.3);
+            border: 1px solid #ff00ff;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .post-box:hover::before {
+            left: 100%;
+        }
+
+        .post-box:hover {
+            border-color: #cc00cc;
+            box-shadow: 0 0 25px rgba(204, 0, 204, 0.4);
+        }
+
+        /* Post Title */
+        .post-title {
+            color: #cc00cc !important;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(204, 0, 204, 0.7);
+            border-bottom: 2px solid #cc00cc;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Post Content */
+        .post-content {
+            color: white !important;
+            font-size: 16px;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .post-content code {
+            background: rgba(255, 0, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: 1px solid #ff00ff;
+            font-family: 'Courier New', monospace;
+            color: #ff00ff;
+        }
+
+        .post-content pre {
+            background: rgba(20, 0, 20, 0.5);
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff00ff;
+            overflow-x: auto;
+            margin: 15px 0;
+            color: #ff00ff;
+        }
+
+        .post-content a {
+            color: #cc00cc;
+            text-decoration: none;
+            border-bottom: 1px dotted #cc00cc;
+        }
+
+        .post-content a:hover {
+            color: #ff00ff;
+            border-bottom: 1px solid #ff00ff;
+            text-shadow: 0 0 5px #ff00ff;
+        }
+
+        /* Post Image */
+        .post-image {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ff00ff;
+            border-radius: 8px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .post-image:hover {
+            border-color: #cc00cc;
+            box-shadow: 0 0 20px rgba(204, 0, 204, 0.5);
+            transform: scale(1.02);
+        }
+
+        /* Download Section */
+        #image-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #image-section a {
+            text-decoration: none;
+        }
+
+        #image-section span {
+            color: #cc00cc;
+            border: 1px solid #cc00cc;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        #image-section span:hover {
+            background: rgba(204, 0, 204, 0.1);
+            box-shadow: 0 0 15px rgba(204, 0, 204, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation Buttons */
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .nav-button {
+            padding: 12px 25px;
+            background: rgba(255, 0, 255, 0.1);
+            color: #ff00ff;
+            text-decoration: none;
+            border: 1px solid #ff00ff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-family: 'Quantico', monospace;
+            text-align: center;
+            flex: 1;
+            max-width: 150px;
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 0, 255, 0.2);
+            color: #cc00cc;
+            border-color: #cc00cc;
+            box-shadow: 0 0 15px rgba(204, 0, 204, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Popup Modal */
+        .popup-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(5px);
+        }
+
+        .popup-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid #ff00ff;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #ff00ff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2001;
+        }
+
+        .close-btn:hover {
+            color: #ff4444;
+            text-shadow: 0 0 10px #ff4444;
+            transform: scale(1.1);
+        }
+
+        /* Official Badge Animation */
+        .official-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.03;
+        }
+
+        .badge {
+            position: absolute;
+            font-size: 20px;
+            color: #ff00ff;
+            animation: badgeFloat 10s linear infinite;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+        }
+
+        @keyframes badgeFloat {
+            0% { 
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+                opacity: 0; 
+            }
+            10% { 
+                opacity: 1; 
+            }
+            90% { 
+                opacity: 1; 
+            }
+            100% { 
+                transform: translateY(-100px) rotate(360deg) scale(1);
+                opacity: 0; 
+            }
+        }
+
+        /* Official Seal */
+        .official-seal {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .seal {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255, 0, 255, 0.1);
+            border: 1px solid #ff00ff;
+            border-radius: 20px;
+            color: #ff00ff;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: sealGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes sealGlow {
+            0%, 100% { 
+                box-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
+            }
+            50% { 
+                box-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .logo {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .heading {
+                font-size: 20px;
+            }
+            
+            .post-box {
+                padding: 20px;
+            }
+            
+            .post-title {
+                font-size: 22px;
+            }
+            
+            .post-content {
+                font-size: 14px;
+            }
+            
+            .navigation-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-button {
+                max-width: 200px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                width: 180px;
+                left: 10px;
+            }
+            
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .heading {
+                font-size: 18px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .post-box {
+                padding: 15px;
+            }
+            
+            .post-title {
+                font-size: 20px;
+            }
+        }
+
+        /* Terminal Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff00ff;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cc00cc;
+        }
+
+        /* Terminal Cursor Effect */
+        .terminal-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Official Badge Animation -->
+    <div class="official-badge" id="official-badge"></div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-toggle" id="nav-toggle">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="../index-2.html">Home</a>
+            <a href="index-2.html">Post List</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="white sec bangladesh logo.png" alt="WHITE-SEC Logo" class="logo">
+            </a>
+        </div>
+
+        <p class="heading">WHITE-SEC BANGLADESH OFFICIAL</p>
+        <p class="sub-heading">We Are Security Researcher Team</p>
+
+        <!-- Official Seal -->
+        <div class="official-seal">
+            <div class="seal">Official Post</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Post Section -->
+        <div class="post-box">
+            <h2 class="post-title"> বাল্যবিবাহ  ও আমাদের সমাজ</h2>
+            
+            <!-- Display the post content with HTML tags intact -->
+            <div class="post-content"><div class=\"html-div xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd\" style=\"margin: 0px; padding: 0px; font-family: inherit;\"><div dir=\"auto\" class=\"html-div xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd\" style=\"margin: 0px; padding: 0px; font-family: inherit;\"><div data-ad-rendering-role=\"story_message\" class=\"html-div xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd\" style=\"margin: 0px; padding: 0px; font-family: inherit;\"><div class=\"x1l90r2v x1iorvi4 x1ye3gou xn6708d\" data-ad-comet-preview=\"message\" data-ad-preview=\"message\" id=\"«r15f»\" style=\"padding: 4px 12px 16px; font-family: inherit;\"><div class=\"x78zum5 xdt5ytf xz62fqu x16ldp7u\" style=\"display: flex; flex-direction: column; margin-top: -5px; margin-bottom: -5px; font-family: inherit;\"><div class=\"xu06os2 x1ok221b\" style=\"margin-top: 5px; margin-bottom: 5px; font-family: inherit;\"><span class=\"x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xudqn12 x3x7a5m x1f6kntn xvq8zen xo1l8bm xzsf02u x1yc453h\" dir=\"auto\" style=\"overflow-wrap: break-word; max-width: 100%; word-break: break-word; font-size: 0.875rem; display: block; font-family: inherit; line-height: 1.3333; color: rgb(226, 229, 233); min-width: 0px;\"><div class=\"x11i5rnm xat24cr x1mh8g0r x1vvkbs xtlvy1s x126k92a\" style=\"margin: 0.5em 0px 0px; overflow-wrap: break-word; white-space-collapse: preserve; font-family: inherit;\"><div dir=\"auto\" style=\"font-family: inherit;\">আমরা যে সনে দাঁড়িয়ে আছি সেটা ২০২৫।  চারিদিকে নগ্নতা আর অশ্লীলতার ছড়াছড়ি,হাত বাড়ালেই নীল জগতের হাতছানি , ক্লাস ৬ এর মেয়ে যতটুকু যৌনতা যেটুকু  ধারণা রাখে কিছু ক্ষেত্রে দেখা যায় তার থেকে ১০ বছরের সিনিয়র আপু সেটুকু ধারণা রাখেনা। এটা কি কারণে হয়েছে? ইন্টারনেটের সহজলভ্যতা আর স্মার্টনেস দেখানোর প্রবণতার জন্য।</div><div dir=\"auto\" style=\"font-family: inherit;\">যদি কোথাও দেখা যায় ১৭ বছর মেয়ের বিয়ে হচ্ছে সেখানে এদেশের নারীবাদি আর কথিত সুশীল সমাজের আগ্রাসন, বাবা আর ছেলেকে কারাদণ্ড আর পরেরদিন পত্রিকার কলামে বাঘের হুঙ্কার ছেড়ে নিজেদের পশ্চিমা সভ্যতার ধারক বাহক হিসেবে তুলে ধরার প্রতিযোগিতা।  অথচ প্রতিনিয়ত আমাদের সমাজে চলছে বাল্যজিনা, প্রায়শই ঢাকার ডাস্টবিন গুলোর ভিতর পাওয়া যায় কিছু পরিচয়হীন ফুটফুটে কন্যাশিশু, ছেলে শিশু, এগুলো নিয়ে এদেশের আলেম সমাজের কন্ঠ শীতের রাতের ৫০ হাজার টাকার মাহফিল পর্যন্ত।</div></div><div class=\"x11i5rnm xat24cr x1mh8g0r x1vvkbs xtlvy1s x126k92a\" style=\"margin: 0.5em 0px 0px; overflow-wrap: break-word; white-space-collapse: preserve; font-family: inherit;\"><div dir=\"auto\" style=\"font-family: inherit;\">আমাদের কিছু পয়েন্ট ডিফাইন করতে হবে:</div></div><div class=\"x11i5rnm xat24cr x1mh8g0r x1vvkbs xtlvy1s x126k92a\" style=\"margin: 0.5em 0px 0px; overflow-wrap: break-word; white-space-collapse: preserve; font-family: inherit;\"><div dir=\"auto\" style=\"font-family: inherit;\">বিয়ে মানুষ কেন করে? শুধু শারীরিক চাহিদার জন্য নাকি একটা স্টাবল সম্পর্কের জন্য,কিছুদিন আগে আমেরিকান এক বিশ্ববিদ্যালয়ের গবেষনায় উঠে এসেছে কিছু ভয়ংকর তথ্য। আমরা প্রতিনিয়ত যে খাবার খাই সেটা ভেজাযুক্ত হওয়ার কারণে মানবদেহের কিছু হরমোনের অতিরিক্ত রিয়াকশনের ফলে অস্বাভাবিকভাবে যৌন চাহিদা, ডিপ্রেশন, একাকীত্ব বেড়ে যেতে পারে। এছাড়া বর্তমান জেনারেশনের অতিরিক্ত ডিভাইস ব্যাবহারের জন্য মুটিয়ে যাওয়া, চোখের সমস্যা সহ হাজার টা রোগবালাই বাসা বাধছে প্রতিনিয়ত। </div></div><div class=\"x11i5rnm xat24cr x1mh8g0r x1vvkbs xtlvy1s x126k92a\" style=\"margin: 0.5em 0px 0px; overflow-wrap: break-word; white-space-collapse: preserve; font-family: inherit;\"><div dir=\"auto\" style=\"font-family: inherit;\">এবার আমাদের ফিরে যেতে হবে একটু ব্যাকইন্ডে :</div></div><div class=\"x11i5rnm xat24cr x1mh8g0r x1vvkbs xtlvy1s x126k92a\" style=\"margin: 0.5em 0px 0px; overflow-wrap: break-word; white-space-collapse: preserve; font-family: inherit;\"><div dir=\"auto\" style=\"font-family: inherit;\">এই পৃথিবীর বুকে কারা নিউ ওয়ার্ল্ড অর্ডার প্রতিষ্ঠা করতে চায় এবং কেন চায়? এবং এই বিষয়টির সাথে উপরোক্ত দুটি বিষয়ের কি মিল রয়েছে? </div></div><div class=\"x11i5rnm xat24cr x1mh8g0r x1vvkbs xtlvy1s x126k92a\" style=\"margin: 0.5em 0px 0px; overflow-wrap: break-word; white-space-collapse: preserve; font-family: inherit;\"><div dir=\"auto\" style=\"font-family: inherit;\">Hint 1.আমরা জানি সারাবিশ্বে যত প্রকার ফুড , কসমেটিক, টেক, বিনোদন ইন্ড্রাস্ট্রি গুলার  নিয়ন্ত্রণ কারা করে। </div></div><div class=\"x11i5rnm xat24cr x1mh8g0r x1vvkbs xtlvy1s x126k92a\" style=\"margin: 0.5em 0px 0px; overflow-wrap: break-word; white-space-collapse: preserve; font-family: inherit;\"><div dir=\"auto\" style=\"font-family: inherit;\">Hint 2. বর্তমান সময়ে অমুসলিমদের সাথে মুসলিমদের যে মনস্তাত্ত্বিক যুদ্ধ চলছে এর পিছনে কি কারণ এবং কেন? </div></div><div class=\"x11i5rnm xat24cr x1mh8g0r x1vvkbs xtlvy1s x126k92a\" style=\"margin: 0.5em 0px 0px; overflow-wrap: break-word; white-space-collapse: preserve; font-family: inherit;\"><div dir=\"auto\" style=\"font-family: inherit;\">উত্তর : বই (তৃতীয় বিশ্বযুদ্ধ ও দাজ্জাল)</div></div><div class=\"x11i5rnm xat24cr x1mh8g0r x1vvkbs xtlvy1s x126k92a\" style=\"margin: 0.5em 0px 0px; overflow-wrap: break-word; white-space-collapse: preserve; font-family: inherit;\"><div dir=\"auto\" style=\"font-family: inherit;\">এখন এই সম্যার সমাধানে আমাদের কি করনীয়?</div></div><div class=\"x11i5rnm xat24cr x1mh8g0r x1vvkbs xtlvy1s x126k92a\" style=\"margin: 0.5em 0px 0px; overflow-wrap: break-word; white-space-collapse: preserve; font-family: inherit;\"><div dir=\"auto\" style=\"font-family: inherit;\">চোখ রাখুন আগামী পর্বে:..............</div></div></span></div></div></div></div></div><div id=\"«r15g»\" class=\"html-div xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x1n2onr6\" style=\"margin: 0px; position: relative; padding: 0px; font-family: inherit;\"><div class=\"html-div xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x1n2onr6\" style=\"margin: 0px; position: relative; padding: 0px; font-family: inherit;\"><a attributionsrc=\"/privacy_sandbox/comet/register/source/?xt=AZXM4p1fwItI5YjSuikhniu7sXVWtAst6GYSTERA7Ci5Izp-tp_2BjX9QZm9Hnu8_ytgR-smZs7hDytctGoW0waS17yeyLiPClw-0Z9re202Qd5fdczoKkFbS43zHUEyTzdP8689pbW9h-vZbOPKyVVZ2cSWfNMvZ01Yony6a7IXsG3_9Le6eJlW2JJ-XHG1XkEByagqY3M4Xyp3TJG6jZwBp6M3yfMz91NamFm9UEDEl9HmET8J92havYEv1I5UCcxL-R0JUeg1mV_wYoKFVPaU3G5vibSe2uQLS3r3_XmXc3sDN1u7c4wU2nY-sb92M9-h0dUDj4mWxgG5159dO3_6wPA1nO5o-zzUY7f8bU9as_5QHq_X-_xca2XnWJ0_KsDC79ECimLcUMFOw-AoakHdaxWZAf8Lem_aYcfeTJYkpGIg2ecepqQcctqPz7MxA9e_xSmrlJTMh3aKu6-DUpE4Sj4OCn4w04sX9_bG5gKxprIzx6FDhTsV-HmJwPckvkB3x1oJh3dx36ITEgvJLvHrOsUPLlg5J-Scyapvy_1DvPjCHMaDMx9qSkvFJ-s7dNdwPS8ciYoiY5qnDIdNC0ic6Z1lOwNBNpDW5QM_pOl5-MepUzGpqAlBxCubbw1w3qatTKPE2LM6AtwLRYPSTdSUjo8Pt65nQEx1KJV5G8cWqzlm-iUFEkho-EHIQY8Lhqn5RgFFendBk9w_xSSiOzJJg5RRpClu8d5RiNo-ruJkclTUnfzatbVI-ELJtpQw1twODCK8aFwIXDS5XqW5G27vyiR9rj6R24oXMpNWfrJfPnn2wEedd3xlDluNyQ9wbspe6lXAmsCesXDJK4U3OeJ9tPVsB3gaVFMdZXuUrr7Qfi60y7EavCaSkd7TWu7yDkOcPpXy7ZvapCG79tKRNhBmySbmf6jt6ARNPJ2kNkY0knbTZCbk9SBFrfQIrt7jJMc1csmqlsBYIyKiAlrVYX436PDzEsWIRWo0NYIButym08QdPXKRw_mW_E0SR2rdZcfJoMJrUkfl4mDig_v_UCOIVAdqoGXWle-n_91mdvYjNmn9Pnx_wOfec6s5s_sNLZrFsddzboiLp6O4M5jT5JDGK6ZsV7zzn2-kT33W_0QrNRYd7hCjRFaIk_fo6X05qsjWEYPprEtX6dihzg2ACMQPoVtBAfZhWUsTZf6Ob0y-KhWseUrOnMf8fKBGlik856VYSVyljTWQaTpjGpVY1Zxm6LDpYPuKsSKpB2VR_aqOmom9xqObkxg6_Jf671PGodh2jzjtk5ZMhdizH0qASZLOz-2yRJeeYR7PpzsmmSSFm2VnrqTFGHrFvA0xZCq96-LnGGQBa5vu_x6Bu2oNoNC4\" class=\"x1i10hfl x1qjc9v5 xjbqb8w xjqpnuy xa49m3k xqeqjp1 x2hbi6w x13fuv20 xu3j5b3 x1q0q8m5 x26u7qi x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x1ypdohk xdl72j9 x2lah0s xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r x2lwn1j xeuugli xexx8yu x4uap5 x18d9i69 xkhd6sd x1n2onr6 x16tdsg8 x1hl2dhg xggy1nq x1ja2u2z x1t137rt x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x1q0g3np x87ps6o x1lku1pv x1a2a7pz x1lliihq x1pdlv7q\" href=../_https_/www.facebook.com/photo/indexf3ce.html?fbid=122121991346610113&amp;set=a.122100259904610113&amp;__cft__[0]=AZUaeb2K032SymltFEeanggwTgU3Mhr-vGoS8r-TgqxVSW34_Rw-yF3OuhW3-OwPciKxgBL7Y-OL_FWSyc4j9ymv3WFb4lIooFvduJxpTFGnZLWgnB-oYtH52h6N2yiaAcKR4wiPUiZ_YCnpS6SxaNowFw20XRkfK-Vp4rDelB72-IMQtkdtHxpVKci-hJS_VWj17TgcauwEYslD36EQ8248&amp;__tn__=EH-R\%22 role=\"link\" tabindex=\"0\" style=\"color: rgb(56, 88, 152); cursor: pointer; text-decoration-line: none; list-style: none; margin: 0px; text-align: inherit; position: relative; flex-direction: row; align-items: stretch; border-style: solid; flex-shrink: 0; padding: 0px; box-sizing: border-box; border-width: 0px; outline: none; border-radius: inherit; -webkit-tap-highlight-color: transparent; z-index: 0; display: block; border-color: rgba(0, 0, 0, 0.4); user-select: none; flex-basis: auto; touch-action: manipulation; background-color: transparent; min-height: 0px; min-width: 0px; font-family: inherit;\"><div class=\"x6s0dn4 x1jx94hy x78zum5 xdt5ytf x6ikm8r x10wlt62 x1n2onr6 xh8yej3\" style=\"position: relative; align-items: center; display: flex; flex-direction: column; overflow: hidden; width: 680px; background-color: rgb(173, 1, 1); font-family: inherit;\"><div style=\"font-family: inherit; max-width: 100%; min-width: 500px; width: calc(-325px + 100vh);\"><div class=\"xqtp20y x6ikm8r x10wlt62 x1n2onr6\" style=\"position: relative; overflow: hidden; height: 0px; font-family: inherit; padding-top: 626px;\"><div class=\"x10l6tqk x13vifvy\" style=\"position: absolute; top: 0px; font-family: inherit; height: 626px; left: 0px; width: 626px;\"><img height=\"526\" width=\"526\" alt=\"May be an image of 2 people and text that says \'নিখোঁজ স্কুলছাত্রীর স্ধান মিলেছে নও নওগায় গায় পুলিশ বলছে, প্রেমিকের সাথে পালিয়েছে Jamuna www.jamuna.tv 8 ফেক্রুয়ারি ২০২৫ f jamunatelevision jamunatvbd\'\" class=\"x168nmei x13lgxp2 x5pf9jr xo71vjh x1ey2m1c xds687c x5yr21d x10l6tqk x17qophe x13vifvy xh8yej3 xl1xv1r\" referrerpolicy=\"origin-when-cross-origin\" src=../_https_/scontent-sin2-1.xx.fbcdn.net/v/t39.30808-6/476319088_122121991352610113_2897209371379583771_n3ab4.html?stp=dst-jpg_p526x296_tt6&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=833d8c&amp;_nc_eui2=AeHpJ0c6Jxuy8HAv31lK2AgZwlwKCg2bbF3CXAoKDZtsXTYGOU6vNDmQyW95SVEnTRpcHHIBnhK7GCC_6-afEQAZ&amp;_nc_ohc=PHVSN7QVQdIQ7kNvwHx2miP&amp;_nc_oc=AdnV5xbvv4KymHdU8iTmcnzklCzb-c4W3b0-pv-qBOXtNfpvQI4sDTzuyZFTk2U5PpI&amp;_nc_zt=23&amp;_nc_ht=scontent-sin2-1.xx&amp;_nc_gid=L8_jfH-w5ZVT61uAoo7ZKg&amp;oh=00_AfF1ELPJiGIFA96ZfOeHPW__PkSJwkV_q2dHCl-2cCUc8Q&amp;oe=67F96AC8\%22 style=\"border: 0px; position: absolute; height: 626px; width: 626px; border-radius: 0px; inset: 0px; object-fit: cover;\"></div></div></div></div><div class=\"x1nb4dca x1q0q8m5 xso031l x1exxf4d x13fuv20 x178xt8z x1ey2m1c xds687c x17qophe x47corl x10l6tqk x13vifvy\" style=\"position: absolute; border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05); inset: 0px; pointer-events: none; font-family: inherit;\"></div><div class=\"x1ey2m1c xds687c x17qophe xg01cxk x47corl x10l6tqk x13vifvy x1ebt8du x19991ni x1dhq9h x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m\" role=\"none\" data-visualcompletion=\"ignore\" style=\"position: absolute; border-radius: inherit; inset: 0px; transition-property: opacity; transition-timing-function: cubic-bezier(0, 0, 1, 1); transition-duration: 0.1s; pointer-events: none; opacity: 0; font-family: inherit;\"></div></a></div><div class=\"html-div xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x6ikm8r x10wlt62\" style=\"margin: 0px; padding: 0px; overflow: hidden; font-family: inherit;\"></div></div></div><div style=\"font-family: inherit;\"><div class=\"xabvvm4 xeyy32k x1ia1hqs x1a2w583 x6ikm8r x10wlt62\" data-visualcompletion=\"ignore-dynamic\" style=\"overflow: hidden; border-radius: 0px 0px 8px 8px; font-family: inherit;\"><div style=\"font-family: inherit;\"><div style=\"font-family: inherit;\"><div style=\"font-family: inherit;\"><div class=\"x1n2onr6\" style=\"position: relative; font-family: inherit;\"><div class=\"x6s0dn4 xi81zsa x78zum5 x6prxxf x13a6bvl xvq8zen xdj266r xat24cr xkhd6sd x4uap5 x80vd3b x1q0q8m5 xso031l x16n37ib xq8finb x10b6aqq x1yrsyyn\" style=\"padding: 6px 0px; align-items: center; display: flex; margin: 0px 12px; border-bottom: 1px solid rgb(101, 104, 108); justify-content: flex-end; font-size: 0.9375rem; color: rgb(176, 179, 184); line-height: 1.3333; font-family: inherit;\"><div class=\"x6s0dn4 x78zum5 x1iyjqo2 x6ikm8r x10wlt62\" style=\"flex-grow: 1; align-items: center; display: flex; overflow: hidden; font-family: "Segoe UI Historic", "Segoe UI", Helvetica, Arial, sans-serif; background-color: rgb(37, 39, 40);\"><span aria-label=\"See who reacted to this\" class=\"x1ja2u2z\" role=\"toolbar\" style=\"z-index: 0; font-family: inherit;\"><span id=\"«r15i»\" class=\"x6s0dn4 x78zum5 x1e558r4\" style=\"align-items: center; display: flex; padding-left: 4px; font-family: inherit;\"><span class=\"x6zyg47 x1xm1mqw xpn8fn3 xtct9fg x13zp6kq x1mcfq15 xrosliz x1wb7cse x13fuv20 xu3j5b3 x1q0q8m5 x26u7qi xamhcws xol2nv xlxy82 x19p7ews xmix8c7 x139jcc6 x1n2onr6 x1xp8n7a xhtitgo\" style=\"position: relative; border-style: solid; margin-left: -4px; border-radius: 11px; border-width: 2px; border-color: rgb(37, 39, 40); z-index: 2; width: 18px; height: 18px; font-family: inherit;\"><span class=\"x12myldv x1udsgas xrc8dwe xxxhv2y x1rg5ohu xmix8c7 x1xp8n7a\" style=\"display: inline-block; border-radius: 9px; width: 18px; height: 18px; font-family: inherit;\"><span class=\"html-span xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x1hl2dhg x16tdsg8 x1vvkbs x4k7w5x x1h91t0o x1h9r5lt x1jfb8zj xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j\" style=\"margin: 0px; text-align: inherit; overflow-wrap: break-word; padding: 0px; flex: inherit; flex-direction: inherit; align-items: inherit; align-self: inherit; display: inherit; place-content: inherit; max-width: inherit; width: inherit; min-height: inherit; height: inherit; min-width: inherit; max-height: inherit; font-family: inherit;\"><div aria-label=\"Like: 15 people\" class=\"x1i10hfl x1qjc9v5 xjbqb8w xjqpnuy xa49m3k xqeqjp1 x2hbi6w x13fuv20 xu3j5b3 x1q0q8m5 x26u7qi x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x1ypdohk xdl72j9 x2lah0s xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r x2lwn1j xeuugli xexx8yu x4uap5 x18d9i69 xkhd6sd x1n2onr6 x16tdsg8 x1hl2dhg xggy1nq x1ja2u2z x1t137rt x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x3nfvp2 x1q0g3np x87ps6o x1lku1pv x1a2a7pz\" role=\"button\" tabindex=\"0\" style=\"list-style: none; margin: 0px; text-align: inherit; position: relative; flex-direction: row; align-items: stretch; cursor: pointer; border-style: solid; flex-shrink: 0; padding: 0px; box-sizing: border-box; border-width: 0px; outline: none; border-radius: inherit; -webkit-tap-highlight-color: transparent; z-index: 0; border-color: rgba(0, 0, 0, 0.4); display: inline-flex; user-select: none; flex-basis: auto; touch-action: manipulation; background-color: transparent; min-height: 0px; min-width: 0px; font-family: inherit;\"><br></div></span></span></span></span></span><div style=\"font-family: inherit;\"><span class=\"html-span xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x1hl2dhg x16tdsg8 x1vvkbs x4k7w5x x1h91t0o x1h9r5lt x1jfb8zj xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j\" style=\"margin: 0px; text-align: inherit; overflow-wrap: break-word; padding: 0px; flex: inherit; flex-direction: inherit; align-items: inherit; align-self: inherit; display: inherit; place-content: inherit; max-width: inherit; width: inherit; min-height: inherit; height: inherit; min-width: inherit; max-height: inherit; font-family: inherit;\"><div class=\"x1i10hfl xjbqb8w x1ejq31n xd10rxx x1sy0etr x17r0tee x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x1ypdohk xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x1n2onr6 x87ps6o x1lku1pv x1a2a7pz x1heor9g xnl1qt8 x6ikm8r x10wlt62 x1vjfegm x1lliihq\" role=\"button\" tabindex=\"0\" style=\"list-style: none; margin: 0px; text-align: inherit; border-style: none; position: relative; cursor: pointer; padding: 0px; box-sizing: border-box; border-width: 0px; overflow: hidden; outline: none; border-radius: inherit; color: inherit; -webkit-tap-highlight-color: transparent; z-index: 1; user-select: none; touch-action: manipulation; background-color: transparent; max-height: 1.3333em; font-family: inherit;\"><div class=\"x9f619 x1ja2u2z xzpqnlu x1hyvwdk x14bfe9o xjm9jq1 x6ikm8r x10wlt62 x10l6tqk x1i1rx1s\" style=\"position: absolute; box-sizing: border-box; overflow: hidden; height: 1px; clip-path: inset(50%); z-index: 0; clip: rect(0px, 0px, 0px, 0px); width: 1px; font-size: 0.0625rem; font-family: inherit;\">All rea</div></div></span></div></div></div></div></div></div></div></div></div></div>
+
+                        
+            <br>
+
+            
+            <!-- Navigation Buttons -->
+            <div class="navigation-buttons">
+                                    <a href="post8431.html?id=73" class="nav-button">← Previous</a>
+                
+                                    <a href="postbc58.html?id=78" class="nav-button">Next →</a>
+                            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up Image Modal -->
+    <div id="popup-modal" class="popup-modal">
+        <span class="close-btn" id="close-btn">&times;</span>
+        <img class="popup-content" id="popup-content" alt="Popup Image">
+    </div>
+
+    <script>
+        // Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close nav when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Image Popup Modal
+        const postImage = document.getElementById('post-image');
+        const popupModal = document.getElementById('popup-modal');
+        const popupContent = document.getElementById('popup-content');
+        const closeBtn = document.getElementById('close-btn');
+
+        if (postImage) {
+            postImage.addEventListener('click', () => {
+                popupContent.src = postImage.src;
+                popupModal.style.display = 'block';
+            });
+        }
+
+        closeBtn.addEventListener('click', () => {
+            popupModal.style.display = 'none';
+        });
+
+        popupModal.addEventListener('click', (e) => {
+            if (e.target === popupModal) {
+                popupModal.style.display = 'none';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                popupModal.style.display = 'none';
+            }
+        });
+
+        // Official Badge Animation
+        function createOfficialBadge() {
+            const badgeAnim = document.getElementById('official-badge');
+            const symbols = ['⚜️', '🔰', '⭐', '🏴', '🔸', '🔷', '💠', '🎖️'];
+            const badge = document.createElement('div');
+            badge.className = 'badge';
+            badge.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+            badge.style.left = Math.random() * 100 + 'vw';
+            badge.style.animationDelay = Math.random() * 10 + 's';
+            badge.style.fontSize = (Math.random() * 20 + 16) + 'px';
+            badgeAnim.appendChild(badge);
+            
+            setTimeout(() => {
+                badge.remove();
+            }, 10000);
+        }
+
+        // Create initial badge animation
+        for (let i = 0; i < 6; i++) {
+            setTimeout(createOfficialBadge, i * 1500);
+        }
+        setInterval(createOfficialBadge, 2000);
+
+        // Add terminal cursor effect to titles
+        document.addEventListener('DOMContentLoaded', function() {
+            const titles = document.querySelectorAll('.post-title');
+            titles.forEach(title => {
+                title.classList.add('terminal-cursor');
+            });
+
+            // Style code blocks
+            const codeBlocks = document.querySelectorAll('code');
+            codeBlocks.forEach(block => {
+                block.style.fontFamily = "'Courier New', monospace";
+                block.style.background = 'rgba(255, 0, 255, 0.1)';
+                block.style.padding = '2px 6px';
+                block.style.borderRadius = '3px';
+                block.style.border = '1px solid #ff00ff';
+                block.style.color = '#ff00ff';
+            });
+        });
+    </script>
+</body>
+</html>
